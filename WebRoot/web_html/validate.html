@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>河南省预约挂号服务平台</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="#(webRoot)/assets/css/reset.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="#(webRoot)/assets/css/common.css">
+    <link rel="stylesheet" href="#(webRoot)/assets/font/iconfont.css">
+    <style>
+	.circle {
+		background-color: #1abdac;
+		position: absolute;
+		line-height:20px;
+		text-align:center;
+		font-size: 12px;
+	}
+</style>
+</head>
+<body style="margin:0;padding:0" onload="showWords();">
+
+<div id="imgDiv">
+		<img id="codeImg" src="#(webRoot)/verifiCodeDemo/VerifiCode"/>
+		<a href="#" onclick="switchVerifiCode()">换一张</a><br/>
+	</div>
+	<span id="words"></span><br/>
+	<span id="checkVerifiCodeRs"></span>
+
+
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='#(webRoot)/assets/js/banRouter.js'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+<script type="text/javascript"  src="#(webRoot)/assets/js/baiduCount.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+function switchVerifiCode() {
+	document.getElementById("codeImg").src = "#(webRoot)/verifiCodeDemo/VerifiCode?t="+new Date().getTime();
+	setTimeout(function() {
+		showWords();
+	}, 200);
+	removeLittleCircle();
+	$("#checkVerifiCodeRs").text("");
+}
+
+function showWords() {
+	$.ajax({
+		url:"#(webRoot)/verifiCodeDemo/GetVerifiWords",
+		method:"POST",
+		dataType:'json',
+		success:function(data){
+			console.log(data);
+			if (data != null && data != "") {
+				$("#words").text("请依次输入以下字符：" + data.result);
+			}
+		},
+		error:function(){
+			alert("获取字符串异常");
+		}
+	});
+}
+
+function onMD(e) {
+	var xz = e.clientX;
+	var yz = e.clientY;
+	return {
+		x:xz,
+		y:yz
+	}
+}
+
+var g = null;
+var clickNum = 0;
+$(function() {
+	var points = "";
+	$("#codeImg").on("click", function(e) {
+		clickNum++;
+		var zb = onMD(e);
+		//drawCircle
+		drawCircle(e);
+		
+		var point = zb.x + "," + zb.y;
+		console.log("point:" + point);
+		points += (point + ";");
+		if (4 == clickNum) {
+			$.ajax({
+				url:"#(webRoot)/verifiCodeDemo/CheckVerifiCode",
+				data:"points=" + points,
+				method:"POST",
+				success:function(data) {
+					if ("1" == data) {
+						$("#checkVerifiCodeRs").css("color", "green");
+						$("#checkVerifiCodeRs").text("校验通过！");
+						/* removeLittleCircle(); */
+					} else {
+						$("#checkVerifiCodeRs").css("color", "red");
+						$("#checkVerifiCodeRs").text("校验失败！");
+					}
+					clickNum = 0;
+					points = "";
+				}
+			});	
+		}
+	});
+	
+	/* var container = $("#codeImg");
+	g = new jmGraph(container, {
+        width: 300,
+        height: 200,
+        //样式，规则请参照样式说明
+        style: {
+            fill: '#F4A460' //指定背景色
+        }
+    }); */
+});
+
+function drawCircle(event) {
+	var $circle = $('<div class="circle">'+clickNum+'</div>');
+	var $img = $("#imgDiv");
+	var centerX = event.pageX - $img.offset().left;
+	var centerY = event.pageY - $img.offset().top;
+	var radius = 10;
+	
+	// 设置圆的大小和位置
+	$circle.css("left", centerX - radius + "px");
+	$circle.css("top", centerY - radius + "px");
+	$circle.css("width", 2 * radius + "px");
+	$circle.css("height", 2 * radius + "px");
+	$circle.css("border-radius", radius + "px");
+	$img.append($circle);
+		event.preventDefault();
+}
+
+function removeLittleCircle(){
+	clickNum = 0;
+	$(".circle").each(function() {
+		$(this).remove();
+	});
+}
+
+</script>
+</body>
+</html>

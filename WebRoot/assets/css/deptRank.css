@@ -1,0 +1,187 @@
+/*科室排行 css*/
+@charset "utf-8";
+/*  css重置  */
+html{
+    font-size:20px; /* 20px 默认字体*/
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+a{
+    text-decoration:none;
+    color:#333;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}
+ul,ol{
+    list-style: none;
+}
+.clear{
+    content:"";
+    display:table;
+    clear:both;
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    font-family:"SimSun",Helvetica,  sans-serif;
+    color:#333;
+    max-width: 750px;
+}
+img{
+    border: 0 none;
+    vertical-align: middle;
+}
+.e_text{	/* 文字超出几行显示省略号 */
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow:ellipsis;
+    /*-webkit-line-clamp: ？;*/
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+/*页面样式*/
+.main{
+    width:100%;
+    padding-bottom: 2rem;
+}
+.main>img{
+    width:100%;
+}
+.section {
+    margin-bottom:1.5rem;
+}
+.section h1{
+    font-weight: normal; color:#209fda;
+    height:2rem; line-height:2rem;
+    font-size: 1.9rem; margin:.5rem 0rem 1rem;
+}
+span.keshi{
+    margin:0 .5rem;
+}
+span.star{ margin-left:.5rem; }
+span.star img{
+    margin-right: .2rem;
+    width:1.6rem;
+    vertical-align: top;
+}
+.sec{ overflow: hidden ;margin-bottom: 1rem}
+.section h1,p{ text-align: center; }
+.section p{
+    color:#fff; background-color: #74BEE4;
+    font-size: 1.3rem; padding:1.25rem 2rem;
+    margin-bottom:.5rem;
+}
+.section ul.yy{
+    margin-bottom: .5rem;
+    padding: 0 1.25rem;
+}
+.section ul.yy>li{
+    box-sizing: border-box;
+    float:left; width:100%;
+    height:2.3rem;
+    line-height:2.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.section ul>li a{
+    color:#333; font-size: 1.3rem;
+}
+.section ul>li a:focus,.section ul>li a:active{
+    color:#209fda;
+}
+/*紧俏专家*/
+ul.jqzj{
+    background:url(../images/jqzj.png) no-repeat center center;
+    background-size:  100% 13rem;
+    margin:0 1.25rem;
+    padding-top: 1.5rem;
+    height:13rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.jqzj>li{
+    width:20%; text-align: center;
+    height:1.8rem; line-height: 1.8rem;
+}
+
+ul.jqzj60{
+    background:url(../images/jqzj60.png) no-repeat center center;
+    background-size:  100% 23rem;
+    margin:0 1.25rem;
+    padding-top: 1.5rem;
+    height:23rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.jqzj60>li{
+    width:20%; text-align: center;
+    height:1.8rem; line-height: 1.8rem;
+}
+/* 分页 */
+ul.pages{
+    text-align: center; font-size: 0;
+}
+ul.pages li{
+    cursor: pointer;
+    width:2.4rem; height:2.4rem;
+    line-height: 2.4rem;
+    font-size: 1.1rem;
+    display: inline-block;
+    vertical-align: center;
+    border:1px solid #dfdfdf;
+    border-radius: .6rem;
+    margin:0 .5rem;
+}
+ul.pages li.on,ul.pages li:hover{
+    color:#39f;
+    border-color:#39f;
+}
+.zhu{
+    font-size: 14px;
+    line-height: 20px;
+    padding:15px 20px 0;
+    text-indent: 2rem;
+    overflow: hidden;
+    text-align: left;
+}
+
+/******  媒体监听  ******/
+@media screen  and (min-width: 320px){
+    html{
+        font-size:10px;
+    }
+}
+@media screen  and (min-width: 375px){
+    html{
+        font-size:12px;
+    }
+}
+@media screen  and (min-width: 414px){
+    html{
+        font-size:14px;
+    }
+}
+@media screen  and (min-width: 510px){
+    html{
+        font-size: 16px;
+    }
+}
+@media screen  and (min-width: 630px){
+    html{
+        font-size: 18px;
+    }
+}
+@media screen  and (min-width: 720px){
+    html{
+        font-size: 20px;
+    }
+}
+

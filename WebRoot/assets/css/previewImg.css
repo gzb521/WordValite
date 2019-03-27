@@ -1,0 +1,9 @@
+/*for 百佳医生 （二维码放大查看）*/
+.wang-enlarge-cover-div{position:fixed;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,.7);z-index:1000;}
+.wang-enlarge-img-div{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1001;display:flex;justify-content:center;align-items:center}
+.wang-enlarge-img-div img{
+    width: 80%;
+    animation:fromBack .3s linear
+}
+@keyframes fromBack{
+0%{width: 0;opacity:0}100%{width: 80% ; opacity:1}}

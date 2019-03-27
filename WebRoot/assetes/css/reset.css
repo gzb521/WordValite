@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+html, body, div, p, ul,ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, frameset, table, th, tr, td, fieldset { margin: 0; padding: 0; font-weight: normal;}
+/* IE5.xIE6бbug */ 
+* html body{overflow: visible; } 
+* html iframe, * html frame{overflow: auto;} 
+/* Hides from IE-mac \*/
+* html .clearfix {height:1%;}
+.clearfix {display:block;}
+/* body */ 
+i, em, cite { font-style: normal; }
+/* a */ 
+a {	
+	color:#333;
+	text-decoration:none;
+	-webkit-tap-highlight-color:rgba(255,0,0,0)
+}
+a:hover{text-decoration:none; color:#333;}
+/* form */ 
+textarea,input{ word-wrap:break-word;word-break:break-all;} 
+input {vertical-align:middle;}
+/* li */ 
+ul,li{list-style-type:none;} 
+/* img */ 
+img{border:0 none; vertical-align:middle;} 
+
+input,textarea,button,select {
+	resize:none;
+	overflow:auto;
+	box-sizing:border-box;
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	border:none; outline: none;
+}
+input[type=text],textarea,select {
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-o-appearance:none;
+	appearance:none
+}
+body {
+	-ms-word-break:break-all;
+	word-break:break-all;
+	word-break:break-word;
+	width:100%;
+	max-width: 750px;
+	margin:0 auto;
+	color:#333;
+	font-family: "SimHei","SimSun",  Arial, sans-serif;
+}
+*{box-sizing: border-box;}
+ol,ul {
+	list-style:none
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0
+}
+html{font-size: 20px;}
+.lf {
+    float: left;
+}
+.rt {
+    float: right;
+}
+.clear{
+	content:"";
+  display:table;
+  clear:both;
+}

@@ -1,0 +1,267 @@
+@charset "utf-8";
+			/*reset*/
+html, body, div, p, ul,ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, frameset, table, th, tr, td, fieldset { margin: 0; padding: 0; font-weight: normal;}
+a {	
+	color:#333;
+	text-decoration:none;
+	-webkit-tap-highlight-color:rgba(255,0,0,0)
+}
+a:hover{text-decoration:none; color:#333;}
+img{border:0 none; vertical-align:middle;} 
+body {
+	-ms-word-break:break-all;
+	word-break:break-all;
+	word-break:break-word;
+	width:100%;
+	max-width: 750px;
+	margin:0 auto;
+	color:#333;
+	font-family: "SimHei","SimSun",  Arial, sans-serif;
+}
+*{box-sizing: border-box;}
+table {
+	border-collapse:collapse;
+	border-spacing:0
+}
+			/*style*/
+header{
+	height:4rem; background: #00D2BE;
+	position: relative;
+	color:#fff;
+	padding: 0 1.5rem;
+}
+header h1{
+	height:100%; line-height: 4rem;
+	font-size: 1.7rem; text-align: center; 
+}
+header a{
+	background: url(../images/fanhui.png) no-repeat left center;
+  width: 1rem;
+  height: 100%;
+  background-size: 1rem 1.7rem;
+  float: left;
+}
+.banner{
+	width:100%;
+}
+.box{
+	display: flex;
+	padding:.75rem;
+	justify-content: space-between;
+	flex-wrap:wrap;
+	padding-bottom: 0;
+}
+.box table{
+	border-collapse:collapse;
+	width:31.5%;
+	float: left;
+	margin-bottom: 20px;
+	border: solid thin #ddd;
+}
+
+table .lazy{
+	width:4.5rem; height:5.5rem; 
+	float: left;
+}
+table th{
+	height:7rem;
+	padding:.5rem 1rem 1rem .5rem; 
+}
+table th span{
+	float:right;
+	width:2.3rem; height:2.3rem;
+	background: url(../images/num.png) no-repeat;
+	background-size: 2.3rem 2.3rem;
+	line-height: 2.3rem; text-align: center;
+	margin-top: 1.6rem;
+	color:#fff; font-size: 1.1rem;
+}
+table tbody tr td{
+	height:3.5rem;
+	padding:0 1rem 0 .5rem; 
+}
+
+th,td{
+	border-color:#ddd !important;
+}
+.yishi{
+	font-size: .75rem; float:right;
+	line-height: 3.5rem;
+}
+.yishi_name{
+	font-size: 1.1rem;
+}
+.yishi_name a, .rank{
+	color:#2ea7e0;
+}
+.yishi_name{
+	font-weight: bold;
+	line-height: 3.5rem;
+}
+.yiyuan , .font16{
+	font-size: .7rem;
+}
+.font14{
+	font-size: .7rem;
+}
+.center{
+	text-align: center;
+}
+.daima{
+	font-size:1rem;
+}
+.rank{
+	font-size:1.1rem;
+}
+.ping td{
+	width:50%;
+}
+.enter{
+	width:31.5%;
+	text-align: center;
+	font-size: 1.2rem;
+	position: relative;
+}
+.enter>p{
+	width: 100%;
+	height:11rem;
+	position: absolute;
+	top:50%;
+	margin-top: -6.5rem;
+}
+.enter img{
+	width:9rem;
+	height:9rem;
+	margin-bottom: 1rem
+}
+.zhu{
+	font-size: 1.1rem;
+	padding:.75rem;
+  line-height:1.5rem;
+  background:#f0f0f0;
+  margin-bottom:20px;
+}
+/* 二维码名片 */
+td.gz_wx{
+	background:#fbfbfb url("../images/logo.png") no-repeat .6rem center;
+	background-size: 1.4rem;
+	padding-left: 2.7rem !important;
+	font-size: .72rem; color: #4CB52C;
+}
+.shadow{
+	position: fixed;
+	display: none;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	background-color: rgba(0,0,0,.5);
+	z-index: 20;
+}
+.wx_card{
+	display: none;
+	position: fixed;top: 50%;
+	left: 50%; margin-left: -11rem;
+	margin-top: -16rem; z-index: 21;
+	width:22rem ; height: 26rem;
+	background: #f7f7f7; 
+	border-radius: .8rem;
+	padding: 1.1rem 1rem 0;
+	text-align: center;
+	font-size: .9rem;
+}
+.wx_card .img_box{
+	width: 20rem; 
+	padding-left: 1rem;
+	height: 7.5rem;
+	position: relative;
+	overflow: hidden;
+	margin: 1.5rem auto 0;
+	padding-top: 1.5rem;
+	border-top: 1px solid #dcdcdc;
+}
+.wx_card .wx_name{
+	float: right; font-size: .9rem;
+	width: 13rem; 
+	text-align: left; margin-bottom: 2rem;
+}
+.wx_card .wx_name p{
+	overflow: hidden; white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.wx_card .wx_name >span{
+	display: block; 
+	margin: .5rem 0 .5rem;
+}
+
+.wx_card .img_box img{
+	float: left; 
+	width: 4.8rem; height: 6rem;
+	border-radius: 10%
+}
+.wx_card h4{
+	font-size: 1.1rem; font-weight: 500;
+	margin-top: .2rem; height: 1.5rem;
+	line-height: 1.5rem;
+}
+.wx_card h4 span{
+	 margin-left: 1rem;font-size: .9rem;
+}
+.wx_card>img{
+	display: block; margin: 1rem auto 1.5rem;
+	width: 10rem; height: 10rem;
+}
+.wx_card .gray{
+	color: #666;
+}
+.close_box{
+	width:3rem; height:4rem;
+	position: absolute; top:-4rem;
+	right:0; z-index:21;
+}
+.close_box span{
+	display: block;
+	width:3rem; height:2rem;
+	background:url(../images/guanbi.png) no-repeat center center;
+	background-size: 2rem 2rem;
+}
+.close_box:after{
+	position: absolute; bottom:0px;
+	left:48%; content: '';
+	display: block; width:1px;
+	height:2rem; background-color: #fff;
+}
+
+			/*media*/
+@media screen  and (min-width: 320px){
+	html{
+		font-size: 10px;
+	}
+	.box table{
+		width:31.5%;
+	}
+	.lazy{
+		width:5rem;
+		height:5.5rem;
+	}
+	table th{ padding-right:1rem  }
+}
+@media screen  and (min-width: 410px){
+	html{
+		font-size: 12px;
+	}
+}
+@media screen  and (min-width: 491px){
+	html{
+		font-size: 16px;
+	}
+}
+@media screen  and (min-width: 532px){
+	html{
+		font-size: 18px;
+	}
+}
+@media screen  and (min-width: 587px){
+	html{
+		font-size: 20px;
+	}
+}
+

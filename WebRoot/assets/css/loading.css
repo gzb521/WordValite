@@ -1,0 +1,54 @@
+/*下单页面提交后等待请求回应使用*/
+.btn {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 200px;
+	height: 80px;
+	background-color: #f10120;
+	color: #fff;
+	font-size: 40px;
+	line-height: 80px;
+	text-align: center;
+	z-index: 1001;
+}
+
+/*一下是loading动画样式*/
+.Tshadow {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f6f4f5;
+}
+
+.Tloading {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	z-index: 1000;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	margin-left: -80px;
+	color: #37a;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.Tloading div.load_box {
+	width: 196px;
+	height: 51px;
+	line-height: 51px;
+	border: 1px solid #F26495;
+	background: #fff;
+}
+
+.Tloading img {
+	margin: 10px 15px;
+	float: left;
+	display: inline;
+}

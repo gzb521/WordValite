@@ -1,0 +1,20 @@
+#jfinal框架开发模式
+devMode = true
+#数据库配置
+jdbcUrl=jdbc:mysql://192.168.2.3:3306/comment_health?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user=root
+password=131224
+
+devMode=true
+engineDevMode=true
+
+#访问url配置--测试库
+cron4j 任务调度配置  ------------------------------------------
+cron4j=task1,task2,task3,task4
+
+#每天00：10更新到期的置顶评论
+task1.cron=10 0 * * *
+task1.class=com.comment.wx.common.data.CommentDataTask
+task1.enable=true
+
+
